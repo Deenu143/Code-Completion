@@ -18,11 +18,8 @@ import io.github.rosemoe.sora.langs.textmate.TextMateLanguage
 import io.github.rosemoe.sora.text.ContentIO
 import java.io.IOException
 import android.graphics.Typeface
-import org.deenu.code.editor.NoOpTextActionWindow
-import org.deenu.code.editor.EditorCodeCompletion
 import io.github.rosemoe.sora.widget.component.EditorTextActionWindow
 import io.github.rosemoe.sora.widget.component.EditorAutoCompletion
-import org.deenu.code.completion.CodeCompletionLayout
 
 class EditorFragment : Fragment() {
 	
