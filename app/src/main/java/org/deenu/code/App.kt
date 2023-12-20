@@ -11,8 +11,11 @@ class App : Application() {
         fun getInstance(): App {
             return instance
         }
-    } override fun onCreate() {
-        super.onCreate() // Logger.initialize(this)
+    } 
+	
+	override fun onCreate() {
+        super.onCreate() 
+        Logger.initialize(this)
         instance = this
         AppLogger.initialize(this)
     }
