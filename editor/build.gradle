@@ -20,6 +20,11 @@ android {
 	kotlinOptions {
         jvmTarget = '20'
     }
+	
+	buildFeatures {
+        buildConfig true
+		viewBinding true
+    }		
 
     buildTypes {
         release {
