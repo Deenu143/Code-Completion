@@ -22,6 +22,7 @@ import org.deenu.code.editor.NoOpTextActionWindow
 import org.deenu.code.editor.EditorCodeCompletion
 import io.github.rosemoe.sora.widget.component.EditorTextActionWindow
 import io.github.rosemoe.sora.widget.component.EditorAutoCompletion
+import org.deenu.code.completion.CodeCompletionLayout
 
 class EditorFragment : Fragment() {
 	
@@ -62,9 +63,7 @@ class EditorFragment : Fragment() {
 		binding.editor.typefaceText = Typeface.createFromAsset(requireContext().assets, "gabarito.ttf")  
         val language = TextMateLanguage.create(
             "source.java", true
-        )
-		binding.editor.replaceComponent(EditorTextActionWindow::class.java, NoOpTextActionWindow(binding.editor))
-        binding.editor.replaceComponent(EditorAutoCompletion::class.java, EditorCodeCompletion(binding.editor))
+        )				
 	    binding.editor.setEditorLanguage(language)
 		openAssetsFile("samples/sample.txt")
 	}
