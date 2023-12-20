@@ -1,4 +1,5 @@
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ~    sora-editor - the awesome code editor for Android
   ~    https://github.com/Rosemoe/sora-editor
   ~    Copyright (C) 2020-2023  Rosemoe
@@ -20,8 +21,15 @@
   ~
   ~     Please contact Rosemoe by email 2073412493@qq.com if you need
   ~     additional information or have any questions
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.github.rosemoe.sora"
+    android:versionCode="1"
+    android:versionName="1.0.0" >
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="34" />
 
 </manifest>
