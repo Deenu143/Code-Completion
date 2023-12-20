@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ~    sora-editor - the awesome code editor for Android
   ~    https://github.com/Rosemoe/sora-editor
   ~    Copyright (C) 2020-2023  Rosemoe
@@ -20,26 +21,26 @@
   ~
   ~     Please contact Rosemoe by email 2073412493@qq.com if you need
   ~     additional information or have any questions
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/magnifier_background"
     android:clipChildren="true"
     android:orientation="vertical"
-    android:outlineProvider="background">
+    android:outlineProvider="background" >
 
     <ScrollView
         android:id="@+id/diagnostic_container_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:padding="8dp" >
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/diagnostic_tooltip_brief_message"
@@ -53,23 +54,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp" />
-
         </LinearLayout>
-
     </ScrollView>
-
 
     <HorizontalScrollView
         android:id="@+id/diagnostic_container_quickfix"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#11000000">
+        android:background="#11000000" >
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingHorizontal="4dp">
+            android:paddingHorizontal="4dp" >
 
             <Button
                 android:id="@+id/diagnostic_tooltip_preferred_action"
@@ -79,7 +77,6 @@
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_blue_light" />
 
-
             <Button
                 android:id="@+id/diagnostic_tooltip_more_actions"
                 style="?android:buttonBarButtonStyle"
@@ -88,10 +85,7 @@
                 android:text="@string/sora_editor_diagnostics_more_actions"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_blue_light" />
-
         </LinearLayout>
-
     </HorizontalScrollView>
 
 </LinearLayout>
-
