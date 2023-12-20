@@ -76,4 +76,7 @@ dependencies {
 	implementation 'androidx.constraintlayout:constraintlayout:2.2.0-alpha13'
 	implementation 'androidx.annotation:annotation:1.7.1'
 	implementation 'io.github.Rosemoe.sora-editor:editor:0.22.2'
+	implementation 'io.github.Rosemoe.sora-editor:language-textmate:0.22.2'
+	implementation 'io.github.Rosemoe.sora-editor:language-java:0.22.2'
+	implementation 'io.github.Rosemoe.sora-editor:textmate-core:0.8.4'
 }
