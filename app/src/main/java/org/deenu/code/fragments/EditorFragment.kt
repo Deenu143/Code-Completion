@@ -19,7 +19,9 @@ import io.github.rosemoe.sora.text.ContentIO
 import java.io.IOException
 import android.graphics.Typeface
 import org.deenu.code.editor.NoOpTextActionWindow
+import org.deenu.code.editor.EditorCodeCompletion
 import io.github.rosemoe.sora.widget.component.EditorTextActionWindow
+import io.github.rosemoe.sora.widget.component.EditorAutoCompletion
 
 class EditorFragment : Fragment() {
 	
@@ -62,7 +64,8 @@ class EditorFragment : Fragment() {
             "source.java", true
         )
 		binding.editor.replaceComponent(EditorTextActionWindow::class.java, NoOpTextActionWindow(binding.editor))
-        binding.editor.setEditorLanguage(language)
+        binding.editor.replaceComponent(EditorAutoCompletion::class.java, EditorCodeCompletion(binding.editor))
+	    binding.editor.setEditorLanguage(language)
 		openAssetsFile("samples/sample.txt")
 	}
 	
