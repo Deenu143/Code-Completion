@@ -15,9 +15,8 @@ class App : Application() {
 	
 	override fun onCreate() {
         super.onCreate() 
-Logger.initialize(this);
  
-        Logger.initialize(this)
+        //Logger.initialize(this)
         instance = this
         AppLogger.initialize(this)
     }
