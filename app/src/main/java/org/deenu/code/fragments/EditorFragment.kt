@@ -17,6 +17,7 @@ import io.github.rosemoe.sora.langs.textmate.TextMateColorScheme
 import io.github.rosemoe.sora.langs.textmate.TextMateLanguage
 import io.github.rosemoe.sora.text.ContentIO
 import java.io.IOException
+import android.graphics.Typeface
 
 class EditorFragment : Fragment() {
 	
@@ -46,7 +47,7 @@ class EditorFragment : Fragment() {
 		loadDefaultThemes()
         loadDefaultLanguages()
 		ensureTextmateTheme()
-		setViews()
+		setViews()		
     }
 	
     private fun setToolbar() {
@@ -54,7 +55,8 @@ class EditorFragment : Fragment() {
     }
 	
     private fun setViews() { 
-		val editor = binding.editor
+		val editor = binding.editor		
+		editor.typefaceText = Typeface.createFromAsset(requireContext().assets, "gabarito.ttf")  
         val language = TextMateLanguage.create(
             "source.java", true
         )
