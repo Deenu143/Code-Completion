@@ -18,11 +18,13 @@ import io.github.rosemoe.sora.langs.textmate.TextMateLanguage
 import io.github.rosemoe.sora.text.ContentIO
 import java.io.IOException
 import android.graphics.Typeface
+import org.deenu.code.editor.NoOpTextActionWindow
+import io.github.rosemoe.sora.widget.component.EditorTextActionWindow
 
 class EditorFragment : Fragment() {
 	
     companion object {
-        @JvmField val TAG: String = EditorFragment::class.java.simpleName
+        @JvmField val TAG: String = EditorFragment::class.java.simpleName	
     }
 	
     private lateinit var binding: FragmentEditorBinding
@@ -54,14 +56,13 @@ class EditorFragment : Fragment() {
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolBar)
     }
 	
-    private fun setViews() { 
-		val editor = binding.editor		
-		editor.typefaceText = Typeface.createFromAsset(requireContext().assets, "gabarito.ttf")  
+    private fun setViews() { 			
+		binding.editor.typefaceText = Typeface.createFromAsset(requireContext().assets, "gabarito.ttf")  
         val language = TextMateLanguage.create(
             "source.java", true
         )
-
-        editor.setEditorLanguage(language)
+		binding.editor.replaceComponent(EditorTextActionWindow::class.java, NoOpTextActionWindow(binding.editor))
+        binding.editor.setEditorLanguage(language)
 		openAssetsFile("samples/sample.txt")
 	}
 	
