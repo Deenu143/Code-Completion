@@ -1,0 +1,78 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'com.diffplug.spotless'
+	id "org.jlleitschuh.gradle.ktlint"
+}
+
+android {
+    compileSdkVersion 34
+    buildToolsVersion '34.0.0'
+    namespace "org.deenu.code"	
+	
+	compileOptions {             
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+	
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+	buildFeatures {
+        buildConfig true
+		viewBinding true
+    }
+		
+    spotless {
+        java {
+    	   target "**/*.java"		  
+    	   googleJavaFormat()
+    	}
+    }		
+			
+    defaultConfig {
+        applicationId "org.deenu.code"
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0.0"        
+    }
+	
+    signingConfigs {
+        debug {
+            storeFile file('codecompletion.jks')
+            keyAlias 'codecompletion'
+            storePassword 'codecompletion'
+            keyPassword 'codecompletion'
+        }
+    	release {
+            storeFile file('codecompletion.jks')
+            keyAlias 'codecompletion'
+            storePassword 'codecompletion'
+            keyPassword 'codecompletion'
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable false
+	        signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+	        signingConfig signingConfigs.release
+        }		
+    }	   
+}
+    
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar','*.jar'])	
+	implementation 'androidx.appcompat:appcompat:1.7.0-alpha03'
+	implementation 'com.google.android.material:material:1.12.0-alpha02'
+	implementation 'androidx.databinding:viewbinding:8.3.0-alpha18'
+	implementation 'androidx.constraintlayout:constraintlayout:2.2.0-alpha13'
+	implementation 'androidx.annotation:annotation:1.7.1'
+}
